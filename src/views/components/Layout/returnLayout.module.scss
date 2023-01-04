@@ -1,0 +1,30 @@
+@use '../../style/_color.scss' as color;
+@use '../../style/_font.scss';
+
+.layout {
+  position: relative;
+  padding: 60px 24px 24px 24px;
+
+  min-height: 600px;
+  height: 100%;
+  box-sizing: border-box;
+
+  .arrow {
+    @extend .caption2;
+
+    position: absolute;
+    top: 16px;
+    left: 20px;
+
+    color: color.$neutrals4;
+    cursor: pointer;
+
+    span {
+      display: inline-block;
+      transform: rotate(180deg);
+      transform-origin: center;
+
+      margin-right: 6px;
+    }
+  }
+}

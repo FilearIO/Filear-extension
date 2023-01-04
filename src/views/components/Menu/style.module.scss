@@ -1,0 +1,55 @@
+@use '../../style/_color.scss' as color;
+@use '../../style/_font.scss';
+
+.menu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  border-top: 1px solid color.$neutrals7;
+  color: color.$neutrals5;
+  background-color: #fff;
+}
+
+.menuitem {
+  @extend .caption2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 25%;
+  height: 84px;
+
+  color: color.$neutrals5;
+  text-align: center;
+
+  cursor: pointer;
+
+  i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 2px;
+    width: 66px;
+    height: 36px;
+    border-radius: 20px;
+  }
+
+  &.active {
+    color: color.$primaryBlue;
+
+    i {
+      background-color: color.$neutrals7;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '../../style/_color.scss' as color;
+@use '../../style//_font.scss';
+
+.head {
+  @extend .headline3;
+
+  color: color.$neutrals5;
+
+  span {
+    color: color.$neutrals1
+  }
+}

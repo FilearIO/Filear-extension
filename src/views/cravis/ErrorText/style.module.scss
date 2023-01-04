@@ -1,0 +1,7 @@
+@use '../../style/_color.scss' as color;
+
+.error {
+  color: color.$primaryRed;
+  text-align: left;
+  font-size: 14px;
+}

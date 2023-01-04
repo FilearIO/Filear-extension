@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Filear",
+  "version": "0.0.1",
+  "author": "filear.io",
+  "description": "Secure wallet management for Arweave",
+  "default_locale": "en",
+  "permissions": ["tabs", "storage", "alarms", "notifications"],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "64": "icons/logo64.png",
+    "128": "icons/logo128.png",
+    "256": "icons/logo256.png"
+  },
+  "action": {
+    "default_icon": {
+      "64": "icons/logo64.png",
+      "128": "icons/logo128.png",
+      "256": "icons/logo256.png"
+    },
+    "default_title": "Filear",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected-script.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+}

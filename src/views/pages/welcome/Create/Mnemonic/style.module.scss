@@ -1,0 +1,39 @@
+@use '../../../../style/_color.scss' as color;
+@use '../../../../style//_font.scss';
+
+.mnemonic {
+  width: 100%;
+
+  .tips {
+    @extend .body2;
+    margin-top: 8px;
+    color: color.$neutrals4;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-row-gap: 20px;
+    grid-column-gap: 4px;
+
+    margin: 24px 0 20px 0;
+    text-align: center;
+  }
+
+  .word {
+    @extend .caption1bold;
+
+    display: inline-block;
+
+    border: 1px solid color.$neutrals6;
+    padding: 6px 10px;
+    width: 80px;
+    border-radius: 20px;
+
+    color: color.$neutrals2;
+  }
+
+  .copy {
+    margin: 0 0 24px 0;
+  }
+}

@@ -1,0 +1,45 @@
+@use '../../../style/_color.scss' as color;
+@use '../../../style//_font.scss';
+
+.main {
+  margin: 0 auto;
+  text-align: left;
+
+  .tips {
+    @extend .body2;
+    margin-top: 8px;
+    color: color.$neutrals4;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 32px;
+    width: 100%;
+
+    .card {
+      @extend .body2bold;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      padding: 24px;
+      width: 148px;
+      height: 186px;
+      border-radius: 18px;
+      box-sizing: border-box;
+    }
+
+    .import {
+      margin-right: 16px;
+      background: rgba(55, 114, 255, 0.2);
+    }
+
+    .new {
+      background: color.$neutrals7;
+    }
+  }
+}

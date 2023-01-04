@@ -1,0 +1,63 @@
+@use '../../style/_color.scss' as color;
+@use '../../style//_font.scss';
+
+.cravis-input-wrapper {
+  display: inline-flex;
+  align-items: center;
+
+  position: relative;
+  width: 100%;
+  height: 48px;
+  box-sizing: border-box;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: color.$neutrals6;
+  border-radius: 12px;
+
+  background-color: #fff;
+  overflow: hidden;
+
+  &:hover {
+    border-color: color.$neutrals5;
+  }
+
+  &-focus {
+    border-color: color.$primaryBlue !important;
+  }
+
+  &-error {
+    border-color: color.$primaryRed !important;
+  }
+
+  .cravis-input {
+    @extend .caption1bold;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 12px 16px;
+
+    margin: 0;
+    border: none;
+    outline: none;
+
+    background-color: inherit;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+      color: color.$neutrals4;
+    }
+  }
+
+  .carvis-input-error {
+    position: absolute;
+    top: 40px;
+    left: 0;
+
+    padding-left: 16px;
+  }
+}

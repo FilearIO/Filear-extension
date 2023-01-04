@@ -1,0 +1,18 @@
+@use '../../../style/_color.scss' as color;
+@use '../../../style/_font.scss';
+
+.receive {
+  margin-right: 20px;
+  width: 84px;
+  color: color.$neutrals1;
+}
+
+.qrcode {
+  margin-top: 20px;
+  padding: 0 24px;
+  text-align: center;
+
+  .close {
+    margin-top: 24px;
+  }
+}

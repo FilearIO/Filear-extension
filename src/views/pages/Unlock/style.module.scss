@@ -1,0 +1,49 @@
+@use '../../style/_color.scss' as color;
+@use '../../style//_font.scss';
+
+.main {
+  position: relative;
+  height: 100%;
+
+  .title {
+    @extend .headline3;
+
+    color: color.$neutrals5;
+
+    span {
+      color: color.$neutrals1;
+    }
+  }
+
+  .desc {
+    @extend .body2;
+    margin-top: 8px;
+    margin-bottom: 72px;
+    color: color.$neutrals4;
+  }
+
+  .field {
+    position: relative;
+    margin: 24px 0;
+
+    .err {
+      position: absolute;
+      top: 105%;
+    }
+  }
+
+  .forgetPassword {
+    @extend .caption2;
+
+    margin-top: 10px;
+    color: color.$neutrals5;
+    text-align: right;
+    cursor: pointer;
+  }
+
+  .confirm {
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+  }
+}

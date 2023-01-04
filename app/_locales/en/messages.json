@@ -1,0 +1,206 @@
+{
+  "commonAddress": {
+    "message": "Address"
+  },
+  "commonBack": {
+    "message": "Back"
+  },
+  "commonCancel": {
+    "message": "Cancel"
+  },
+  "commonClose": {
+    "message": "Close"
+  },
+  "commonConfirm": {
+    "message": "Confirm"
+  },
+  "commonCopy": {
+    "message": "Copy"
+  },
+  "commonNext": {
+    "message": "Next"
+  },
+  "commonPasswordError": {
+    "message": "Incorrect password"
+  },
+  "commonSuccess": {
+    "message": "Success"
+  },
+  "createPasswordTips": {
+    "message": "Create your password to ensure your wallet safe"
+  },
+  "createMnemonicTips": {
+    "message": "Please save your mnemonic phrase, if you lose it you will lose your account"
+  },
+  "createVerifyTips": {
+    "message": "Verify your menmonic to begin you travel"
+  },
+  "createVerifySelect": {
+    "message": "Select the word on "
+  },
+  "createVerifyError": {
+    "message": "The selected mnemonic does not match"
+  },
+  "historyTitle": {
+    "message": "This feature is under construction"
+  },
+  "historyTips": {
+    "message": "Now click here to see all transactions"
+  },
+  "importMnemonicTips": {
+    "message": "Import your menmonic to begin you travel"
+  },
+  "importMnemonicError": {
+    "message": "Invalidate Mnemonic"
+  },
+  "importPasswordTips": {
+    "message": "Create your password to ensure your wallet safe"
+  },
+  "menuFiles": {
+    "message": "Files"
+  },
+  "menuWallet": {
+    "message": "Wallet"
+  },
+  "menuHistory": {
+    "message": "History"
+  },
+  "menuSettings": {
+    "message": "Settings"
+  },
+  "networkAdd": {
+    "message": "Add"
+  },
+  "networkAddTitle": {
+    "message": "Add Network"
+  },
+  "networkAddUrl": {
+    "message": "Input Network Url"
+  },
+  "networkAddTag": {
+    "message": "Input Your Tag"
+  },
+  "networkSuccessToast": {
+    "message": "Switch Success"
+  },
+  "password": {
+    "message": "Password"
+  },
+  "passwordConfirm": {
+    "message": "Confirm Password"
+  },
+  "previewName": {
+    "message": "Name: "
+  },
+  "previewDesc": {
+    "message": "Description: "
+  },
+  "previewFileSize": {
+    "message": "File Size: "
+  },
+  "previewFees": {
+    "message": "Fees: "
+  },
+  "previewUpload": {
+    "message": "Upload"
+  },
+  "securityMnemonic": {
+    "message": "Secret Recovery Phrase"
+  },
+  "securityMnemonicTips": {
+    "message": "Never ever share your Secret Recovery Phrase with anyone."
+  },
+  "securityMnemonicShow": {
+    "message": "Reveal Secret Recovery Phrase"
+  },
+  "securityPrivateKey": {
+    "message": "Private Key"
+  },
+  "securityPrivateKeyTips": {
+    "message": "Never ever share your Private Key with anyone."
+  },
+  "securityPrivateKeyShow": {
+    "message": "Download Private Key"
+  },
+  "sendAddress": {
+    "message": "Enter Arweave address"
+  },
+  "sendAmount": {
+    "message": "Enter the Amount"
+  },
+  "sendFees": {
+    "message": "Fee:"
+  },
+  "sendFail": {
+    "message": "Transaction Create Fail"
+  },
+  "sendFailNotificationMessage": {
+    "message": "Transaction create fail.Please check the data. "
+  },
+  "sendSuccess": {
+    "message": "Transaction Create Success"
+  },
+  "sendSuccessNotificationMessage": {
+    "message": "The network takes a few seconds to synchronize block data. "
+  },
+  "settingWallet": {
+    "message": "Wallet"
+  },
+  "settingSecurity": {
+    "message": "Security"
+  },
+  "settingLock": {
+    "message": "Lock"
+  },
+  "settingWebsite": {
+    "message": "Website"
+  },
+  "unlockTitle": {
+    "message": "Back To"
+  },
+  "unlockSubline": {
+    "message": "The wallet for file share and storage"
+  },
+  "unlockForgetPassword": {
+    "message": "Forget Password? "
+  },
+  "upload": {
+    "message": "Upload File"
+  },
+  "uploadNotificationSuccess": {
+    "message": "Upload Success"
+  },
+  "uploadNotificationSuccessMessage": {
+    "message": "The network takes a few seconds to synchronize block data. There will be a delay in list display."
+  },
+  "uploadNotificationFail": {
+    "message": "Upload Fail"
+  },
+  "uploadNotificationFailMessage": {
+    "message": "Click here to see more detail."
+  },
+  "welcomeSuccess": {
+    "message": "Success !"
+  },
+  "welcomeSuccessTips": {
+    "message": "The wallet has been initialized successfully. Start using it now."
+  },
+  "walletReceive": {
+    "message": "Receive"
+  },
+  "walletSend": {
+    "message": "Send"
+  },
+  "welcomeTo": {
+    "message": "Welcome to"
+  },
+  "welcomeTips": {
+    "message": "Settings"
+  },
+  "welcomeImport": {
+    "message": "Import <br />an Existing Wallet "
+  },
+  "welcomeCreate": {
+    "message": "Create <br />a New Wallet"
+  }
+}

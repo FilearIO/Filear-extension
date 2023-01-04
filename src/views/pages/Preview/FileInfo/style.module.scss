@@ -1,0 +1,46 @@
+@use '../../../style/_color.scss' as color;
+@use '../../../style/_font.scss';
+
+.fileinfo {
+  text-align: left;
+
+  .name {
+    @extend .body2bold;
+
+    margin-top: 18px;
+    color: color.$neutrals2;
+  }
+
+  .desc {
+    @extend .caption1;
+
+    display: flex;
+    justify-self: flex-start;
+    align-items: flex-start;
+
+    margin-top: 4px;
+    color: color.$neutrals4;
+
+    .descContent {
+      display: inline-flex;
+      justify-self: flex-start;
+      align-items: flex-start;
+
+      span {
+        display: inline-block;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .size {
+    @extend .caption1;
+
+    color: color.$neutrals4;
+  }
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+}

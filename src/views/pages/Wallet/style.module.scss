@@ -1,0 +1,43 @@
+@use '../../style/_color.scss' as color;
+@use '../../style/_font.scss';
+
+.main {
+  .balanceWrapper {
+    padding-top: 24px;
+    text-align: center;
+
+    .balance {
+      @extend .headline3;
+      color: color.$neutrals1;
+
+      span {
+        color: color.$neutrals5;
+      }
+    }
+
+    .value {
+      @extend .body2bold;
+      margin-top: 8px;
+      color: color.$neutrals3;
+
+      span {
+        @extend .body2;
+        display: inline-block;
+        margin-left: 8px;
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 12px;
+
+      .send {
+        width: 84px;
+        color: color.$neutrals1;
+        background-color: color.$primaryPurple;
+      }
+    }
+  }
+}

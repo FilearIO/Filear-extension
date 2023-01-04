@@ -1,0 +1,17 @@
+@use '../../style/_color.scss' as color;
+@use '../../style/_font.scss';
+
+.main {
+  .infoContainer {
+    .infolist {
+    }
+  }
+
+  .fees {
+    @extend .caption1;
+
+    margin-bottom: 12px;
+
+    color: color.$neutrals4;
+  }
+}

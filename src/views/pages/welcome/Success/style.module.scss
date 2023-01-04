@@ -1,0 +1,25 @@
+@use '../../../style/_color.scss' as color;
+@use '../../../style//_font.scss';
+
+.main {
+  margin: 0 auto;
+  text-align: center;
+
+  img {
+    width: 200px;
+  }
+
+  .title {
+    @extend .headline4;
+
+    margin-top: 36px;
+    color: color.$neutrals3;
+  }
+
+  .tips {
+    @extend .body2;
+
+    margin-top: 8px;
+    color: color.$neutrals4;
+  }
+}

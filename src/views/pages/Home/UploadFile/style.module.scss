@@ -1,0 +1,33 @@
+@use '../../../style/_color.scss' as color;
+@use '../../../style/_font.scss';
+
+.container {
+  @extend .body2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 16px;
+  width: 100%;
+  height: 66px;
+  border: 1px solid color.$primaryBlue;
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  .upload {
+    display: inline-block;
+
+    width: 48px;
+    height: 48px;
+
+    input {
+      display: none;
+    }
+  }
+
+  .icon {
+    margin-top: 6px;
+  }
+}

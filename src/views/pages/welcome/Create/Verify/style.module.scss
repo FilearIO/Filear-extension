@@ -1,0 +1,64 @@
+@use '../../../../style/_color.scss' as color;
+@use '../../../../style//_font.scss';
+
+.verify {
+  width: 100%;
+
+  .tips {
+    @extend .body2;
+    margin-top: 8px;
+    color: color.$neutrals4;
+  }
+
+  .main {
+    .row {
+      margin-top: 30px;
+
+      color: color.$neutrals1;
+
+      .head {
+        @extend .caption1;
+
+        span {
+          color: color.$primaryBlue;
+        }
+      }
+
+      .content {
+        @extend .caption1bold;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 8px;
+        border: 1px solid color.$neutrals6;
+        border-radius: 20px;
+        height: 40px;
+
+        span {
+          display: inline-block;
+          height: 38px;
+          line-height: 38px;
+
+          flex: 1 1 auto;
+          text-align: center;
+        }
+      }
+
+      .selected {
+        border-radius: 20px;
+        background: rgba(color.$primaryBlue, 0.2);
+      }
+    }
+  }
+
+  .error {
+    margin-top: 8px;
+    height: 30px;
+  }
+
+  .confirm {
+    margin-top: 32px;
+  }
+}

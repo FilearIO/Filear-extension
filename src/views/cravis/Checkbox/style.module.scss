@@ -1,0 +1,40 @@
+@use '../../style/_color.scss' as color;
+
+.cravis-checkbox {
+  display: inline-flex;
+  align-items: flex-start;
+
+  input {
+    flex: 0 0 auto;
+    appearance: none;
+
+    position: relative;
+    margin-right: 12px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid color.$neutrals6;
+    border-radius: 3px;
+    background-color: color.$neutrals8;
+
+    &:checked,
+    &[checked="true"],
+    &[aria-checked="true"] {
+      &::before {
+        content: "\2713";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        border: 2px solid color.$primaryBlue;
+        font-weight: 700;
+
+        background-color: color.$primaryBlue;
+        color: color.$neutrals8;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@use '../../style/_color.scss' as color;
+@use '../../style/_font.scss';
+
+.send {
+  position: relative;
+  height: calc(100vh - 96px);
+
+  .label {
+    @extend .body2bold;
+    display: inline-block;
+
+    color: color.$neutrals2;
+
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+
+  .fee {
+    @extend .caption1;
+
+    color: color.$neutrals4;
+    margin-top: 16px;
+  }
+
+  .confirm {
+    position: absolute;
+    left: 0;
+    bottom: 56px;
+  }
+
+  .cancel {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}

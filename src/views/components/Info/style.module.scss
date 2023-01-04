@@ -1,0 +1,48 @@
+@use '../../style/_color.scss' as color;
+@use '../../style/_font.scss';
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 16px;
+  height: 48px;
+
+  span {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .account {
+    @extend .button2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid color.$neutrals6;
+    border-radius: 20px;
+    padding: 4px;
+    height: 40px;
+
+    box-sizing: border-box;
+    color: color.$neutrals2;
+
+    .name {
+      display: inline-block;
+      margin-left: 12px;
+      padding-right: 8px;
+    }
+  }
+
+  .address {
+    font-size: 0.6rem;
+    width: 44%;
+  }
+
+  .network {
+    font-size: 0.9rem;
+    width: 20%;
+  }
+}

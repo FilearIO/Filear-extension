@@ -1,0 +1,53 @@
+@use '../../../style/_color.scss' as color;
+@use '../../../style/_font.scss';
+
+.coinsList {
+  margin: 24px 0 0 0;
+}
+
+.coinItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 16px;
+  height: 80px;
+  border-radius: 16px;
+  background: color.$neutrals7;
+
+  .left {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      margin-right: 30px;
+      width: 60px;
+    }
+
+    .name {
+      @extend .body2bold;
+      color: color.$neutrals1;
+    }
+
+    .symbol {
+      @extend .caption2;
+      color: color.$neutrals4;
+    }
+  }
+
+  .right {
+    .quantity {
+      @extend .body2bold;
+      color: color.$neutrals1;
+
+      span {
+        color: color.$neutrals4;
+      }
+    }
+
+    .amount {
+      @extend .caption2;
+      color: color.$neutrals4;
+    }
+  }
+}

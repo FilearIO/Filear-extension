@@ -1,0 +1,33 @@
+@use '../../../style/_color.scss' as color;
+@use '../../../style/_font.scss';
+
+.title {
+  @extend .body2bold;
+
+  margin-top: 24px;
+  color: color.$neutrals1;
+}
+
+.desc {
+  @extend .caption1;
+
+  margin-top: 4px;
+  color: color.$neutrals4;
+}
+
+.button {
+  margin-top: 8px;
+  width: auto;
+}
+
+.field {
+  margin: 24px 0;
+}
+
+.buttonWarp {
+  display: flex;
+
+  .cancel {
+    margin-right: 12px;
+  }
+}

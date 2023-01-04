@@ -1,0 +1,33 @@
+@use '../../../../style/_color.scss' as color;
+@use '../../../../style/_font.scss';
+
+.password {
+  width: 100%;
+
+  .tips {
+    @extend .body2;
+    margin-top: 8px;
+    color: color.$neutrals4;
+  }
+
+  .field {
+    margin: 20px 0 0 0;
+  }
+
+  .error {
+    padding-top: 12px;
+    height: 100px;
+  }
+
+  .agree {
+    @extend .body2;
+
+    margin: 40px 0 20px 0;
+
+    color: color.$neutrals4;
+
+    a {
+      color: color.$primaryBlue;
+    }
+  }
+}
