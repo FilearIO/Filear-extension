@@ -8,6 +8,7 @@ import { fetchUnlockWithKey } from '@views/client/api'
 import useTrans from '@views/i18n/useTrans'
 import { accountSelector } from '@views/store/wallet'
 import downloadFile from '@views/utils/downloadFile'
+import checkError from '@views/utils/checkError'
 import { validatePassword } from '@views/utils/validate'
 
 import style from './style.module.scss'
@@ -26,7 +27,11 @@ const ShowKey: React.FC = () => {
   const onSubmit = useCallback(async (values: FormikValues) => {
     try {
       const res = await fetchUnlockWithKey(values.password)
-      downloadFile(JSON.stringify(res, null, 2), 'application/json', `arweave-privateKey-${account.address}.json`)
+      downloadFile(
+        JSON.stringify(res, null, 2),
+        'application/json',
+        `arweave-privateKey-${account?.address ?? ''}.json`,
+      )
       setShow(false)
     } catch {
       Toast.fail({ message: t('commonPasswordError') })
@@ -53,7 +58,7 @@ const ShowKey: React.FC = () => {
                     placeholder={t('password')}
                     value={value}
                     onChange={onChange}
-                    showError={meta.touched && meta.error !== ''}
+                    showError={meta.touched && checkError(meta.error)}
                   />
                 </div>
               )}

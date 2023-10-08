@@ -5,6 +5,7 @@ import { Button, Input, Modal, Toast } from '@arshare/cravis'
 
 import { fetchUnlock } from '@views/client/api'
 import useTrans from '@views/i18n/useTrans'
+import checkError from '@views/utils/checkError'
 import { validatePassword } from '@views/utils/validate'
 
 import style from './style.module.scss'
@@ -50,7 +51,7 @@ const ShowMnemonic: React.FC = () => {
                     placeholder={t('password')}
                     value={value}
                     onChange={onChange}
-                    showError={meta.touched && meta.error !== ''}
+                    showError={meta.touched && checkError(meta.error)}
                   />
                 </div>
               )}

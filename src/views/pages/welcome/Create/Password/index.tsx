@@ -3,6 +3,7 @@ import { Field, Form, Formik, FieldProps } from 'formik'
 
 import { Button, Input, ErrorText } from '@arshare/cravis'
 import useTrans from '@views/i18n/useTrans'
+import checkError from '@views/utils/checkError'
 import { validatePassword, validatePasswordAgain } from '@views/utils/validate'
 
 import style from './style.module.scss'
@@ -45,7 +46,7 @@ const Password: React.FC<PasswordProps> = ({ loading, onNext }) => {
                     placeholder={t('password')}
                     value={value}
                     onChange={onChange}
-                    showError={meta.touched && meta.error !== ''}
+                    showError={meta.touched && checkError(meta.error)}
                   />
                 </div>
               )}
@@ -59,7 +60,7 @@ const Password: React.FC<PasswordProps> = ({ loading, onNext }) => {
                     placeholder={t('passwordConfirm')}
                     value={value}
                     onChange={onChange}
-                    showError={meta.touched && meta.error !== ''}
+                    showError={meta.touched && checkError(meta.error)}
                   />
                 </div>
               )}

@@ -2,25 +2,25 @@ import type { Code, Keyring, Account, JWKInterface } from '@shared/interface'
 
 import {
   WalletApiFunction,
-  Params,
-  WalletCreateParams,
-  WalletReCreateParams,
-  WalletUnlockParams,
+  type Params,
+  type WalletCreateParams,
+  type WalletReCreateParams,
+  type WalletUnlockParams,
 } from '@shared/interface/api'
 
 import { Keyrings } from '../keyrings'
-import Storage from '../Storage'
+import { BackgroundStorage } from '../Storage'
 import Store from '../Store'
 
 class WalletApi {
   private readonly _keyrings: Keyrings
-  private readonly _storage: Storage
+  private readonly _storage: BackgroundStorage
   private readonly _store: Store
 
   constructor() {
     this._store = Store.getStore()
     this._keyrings = new Keyrings(this._store)
-    this._storage = new Storage()
+    this._storage = new BackgroundStorage()
   }
 
   public async getWalletList(code: Code = 'AR'): Promise<Keyring> {

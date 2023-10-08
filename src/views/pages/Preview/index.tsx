@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom'
 
 import { Button } from '@arshare/cravis'
 import { FILEAR_BIZTYPE, FILEAR_BIZTYPE_DICT } from '@shared/constants'
+import { readFile } from '@shared/utils/readFile'
 
 import { ROUTES } from '@views/constants'
 import { ReturnLayout } from '@views/components/Layout'
 import { useArFee, useArTransaction } from '@views/hooks'
 import useTrans from '@views/i18n/useTrans'
 import { filesInfoSelector, fileStore } from '@views/store/upload'
-import { readFile } from '@views/utils/readFile'
 
 import FileInfo from './FileInfo'
 

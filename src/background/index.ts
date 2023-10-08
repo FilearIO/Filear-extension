@@ -6,7 +6,7 @@ import initBackgroundPortConnect from './backgroundPortConnect'
 
 browser.runtime.onInstalled.addListener(({ reason }): void => {
   if (reason === 'install') {
-    void open.openHomePage()
+    void open.openHomePage('/welcome')
   }
 })
 
