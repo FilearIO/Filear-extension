@@ -18,11 +18,11 @@ const Toast: React.FC<ToastProps> = ({ className, duration = 2, config, onClose 
   const icon = useMemo(() => {
     switch (config.type) {
       case 'info':
-        return <InfoIcon size={30} color="#3C66FF" />
+        return <InfoIcon size={26} color="#3C66FF" />
       case 'success':
-        return <SuccessIcon size={30} color="#00A830" />
+        return <SuccessIcon size={26} color="#00A830" />
       case 'fail':
-        return <InfoIcon size={30} color="#EB2F58" />
+        return <InfoIcon size={26} color="#EB2F58" />
       default:
         return null
     }
@@ -32,7 +32,7 @@ const Toast: React.FC<ToastProps> = ({ className, duration = 2, config, onClose 
     try {
       const animate = ref.current?.animate(
         [
-          { height: '62px', opacity: 1, marginTop: '4px' },
+          { height: '54px', opacity: 1, marginTop: '4px' },
           { height: 0, opacity: 0, marginTop: 0 },
         ],
         {

@@ -3,7 +3,7 @@ import { NetworkApiFunction } from '@shared/interface/api'
 import netwrokSwitch from '@shared/utils/networkSwitch'
 
 import Arweave from '../Arweave'
-import BackgroundStorage from '../Storage'
+import { BackgroundStorage } from '../Storage'
 
 const DefaultNetworkList: Network[] = [
   {

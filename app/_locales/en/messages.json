@@ -30,16 +30,16 @@
     "message": "Create your password to ensure your wallet safe"
   },
   "createMnemonicTips": {
-    "message": "Please save your mnemonic phrase, if you lose it you will lose your account"
+    "message": "Please save your Secret Recovery Phrase and don't tell it to anyone others. if you lose it, you will lose your account"
   },
   "createVerifyTips": {
-    "message": "Verify your menmonic to begin you travel"
+    "message": "Verify your Secret Recovery Phrase to begin you travel"
   },
   "createVerifySelect": {
     "message": "Select the word on "
   },
   "createVerifyError": {
-    "message": "The selected mnemonic does not match"
+    "message": "The selected word does not match"
   },
   "historyTitle": {
     "message": "This feature is under construction"
@@ -48,10 +48,10 @@
     "message": "Now click here to see all transactions"
   },
   "importMnemonicTips": {
-    "message": "Import your menmonic to begin you travel"
+    "message": "Import your Secret Recovery Phrase to begin you travel"
   },
   "importMnemonicError": {
-    "message": "Invalidate Mnemonic"
+    "message": "Invalidate Phrase"
   },
   "importPasswordTips": {
     "message": "Create your password to ensure your wallet safe"
@@ -183,7 +183,7 @@
     "message": "Success !"
   },
   "welcomeSuccessTips": {
-    "message": "The wallet has been initialized successfully. Start using it now."
+    "message": "The wallet has been created successfully. Start using it right now."
   },
   "walletReceive": {
     "message": "Receive"
@@ -195,7 +195,7 @@
     "message": "Welcome to"
   },
   "welcomeTips": {
-    "message": "Settings"
+    "message": "Decentralized file wallet, permanently store your files and share them"
   },
   "welcomeImport": {
     "message": "Import <br />an Existing Wallet "

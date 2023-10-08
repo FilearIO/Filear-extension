@@ -5,6 +5,10 @@
   margin: 0 auto;
   text-align: left;
 
+  .logo {
+    margin-bottom: 60px;
+  }
+
   .tips {
     @extend .body2;
     margin-top: 8px;
@@ -31,6 +35,8 @@
       height: 186px;
       border-radius: 18px;
       box-sizing: border-box;
+
+      cursor: pointer;
     }
 
     .import {

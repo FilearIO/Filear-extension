@@ -3,7 +3,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { ROUTES } from '@views/constants'
-import { AddIcon } from '@views/cravis/Icons'
+import { AddIcon, FilearIcon } from '@views/cravis/Icons'
 import WelcomeHeader from '@views/components/WelcomeHeader'
 import { MainCard } from '@views/components/Card'
 import useTrans from '@views/i18n/useTrans'
@@ -16,6 +16,9 @@ const Welcome: React.FC = () => {
 
   return (
     <MainCard className={style.main}>
+      <div className={style.logo}>
+        <FilearIcon />
+      </div>
       <WelcomeHeader />
       <div className={style.tips}>{t('welcomeTips')}</div>
       <div className={style.content}>

@@ -9,6 +9,7 @@ import { HomeLayout } from '@views/components/Layout'
 import { ROUTES } from '@views/constants'
 import { useArFee, useArTransaction } from '@views/hooks'
 import useTrans from '@views/i18n/useTrans'
+import checkError from '@views/utils/checkError'
 
 import style from './style.module.scss'
 
@@ -56,7 +57,7 @@ const Send: React.FC = () => {
                     placeholder=""
                     value={value}
                     onChange={onChange}
-                    showError={meta.touched && meta.error !== ''}
+                    showError={meta.touched && checkError(meta.error)}
                   />
                 </div>
               )}
@@ -71,7 +72,7 @@ const Send: React.FC = () => {
                     placeholder=""
                     value={value}
                     onChange={onChange}
-                    showError={meta.touched && meta.error !== ''}
+                    showError={meta.touched && checkError(meta.error)}
                   />
                 </div>
               )}

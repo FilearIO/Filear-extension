@@ -3,7 +3,7 @@
   "name": "Filear",
   "version": "0.0.1",
   "author": "filear.io",
-  "description": "Secure wallet management for Arweave",
+  "description": "Decentralized file wallet, permanently store your files and share them",
   "default_locale": "en",
   "permissions": ["tabs", "storage", "alarms", "notifications"],
   "host_permissions": ["<all_urls>"],

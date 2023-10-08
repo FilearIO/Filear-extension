@@ -17,7 +17,7 @@
 }
 
 .toast {
-  @extend .body1;
+  @extend .body2;
 
   position: relative;
 
@@ -25,10 +25,10 @@
   align-items: center;
 
   width: auto;
-  height: 62px;
+  height: 54px;
   min-width: 50px;
   margin-top: 4px;
-  padding: 16px;
+  padding: 14px 16px;
   border-radius: 16px;
   box-sizing: border-box;
 
@@ -42,7 +42,7 @@
 
   span {
     display: inline-block;
-    margin-right: 8px;
+    margin-right: 4px;
   }
 }
 

@@ -9,9 +9,9 @@ import { fromEventPattern, take, tap, share, Observable, takeUntil, filter } fro
 import { Message, Response } from '../interface'
 
 export enum PortName {
-  CONTENT__BACKGROUND = 'arleon_content__bakckground',
-  UI__BACKGROUND = 'arleon_ui__background',
-  KEEP_ALIVE = 'arleon_keep_alive',
+  CONTENT__BACKGROUND = 'filear_content__bakckground',
+  UI__BACKGROUND = 'filear_ui__background',
+  KEEP_ALIVE = 'filear_keep_alive',
 }
 
 export default class PortConnect {

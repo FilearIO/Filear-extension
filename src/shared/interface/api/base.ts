@@ -3,6 +3,7 @@ export enum ApiKey {
   WalletApi = 'wallet',
   TransactionApi = 'transaction',
   NetworkApi = 'network',
+  Upload = 'upload',
 }
 
 export type Params = Record<string, any>
