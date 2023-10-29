@@ -47,6 +47,12 @@
   "historyTips": {
     "message": "Now click here to see all transactions"
   },
+  "homeNoContentTitle": {
+    "message": "There is nothing uploaded yet."
+  },
+  "homeNoContentDesc": {
+    "message": "Upload and share your first file."
+  },
   "importMnemonicTips": {
     "message": "Import your Secret Recovery Phrase to begin you travel"
   },

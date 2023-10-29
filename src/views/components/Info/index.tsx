@@ -2,6 +2,8 @@ import React, { useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
+import { NetworkIcon } from '@arshare/cravis/Icons'
+
 import { ROUTES } from '@views/constants'
 import { useCopyToClipBoard } from '@views/hooks'
 import { accountSelector } from '@views/store/wallet'
@@ -33,7 +35,7 @@ const Info: React.FC = () => {
         {showAddress}
       </span> */}
       <span className={style.network} onClick={() => navigate(`${ROUTES.ROOT}${ROUTES.NETWORK}`)}>
-        network
+        <NetworkIcon size={32} color="#3772FF" />
       </span>
     </div>
   )
