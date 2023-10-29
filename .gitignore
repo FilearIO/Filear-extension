@@ -3,6 +3,9 @@ node_modules/
 
 # build output
 build/
+*.crx
+*.pem
+*.zip
 
 .eslintcache
 .DS_Store
