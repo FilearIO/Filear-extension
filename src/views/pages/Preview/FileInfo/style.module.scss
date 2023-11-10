@@ -9,27 +9,27 @@
 
     margin-top: 18px;
     color: color.$neutrals2;
+
+    word-break: break-all;
   }
 
   .desc {
     @extend .caption1;
 
-    display: flex;
-    justify-self: flex-start;
-    align-items: flex-start;
-
     margin-top: 4px;
     color: color.$neutrals4;
 
-    .descContent {
-      display: inline-flex;
+    word-break: break-all;
+
+    span {
+      display: inline-block;
+      margin-left: 4px;
+    }
+
+    &.edit {
+      display: flex;
       justify-self: flex-start;
       align-items: flex-start;
-
-      span {
-        display: inline-block;
-        margin-left: 4px;
-      }
     }
   }
 

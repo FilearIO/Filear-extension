@@ -1,6 +1,34 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { Buffer } from 'buffer'
+
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit'
+
+import { UploadInterface, type Params, type UploadFile } from '@shared/interface/api'
+import client from '@views/client'
 
 import type { ArFileInfo } from '../../types'
+
+export const fetchUploadFile = createAsyncThunk('upload/fetchUploadFile', async () => {
+  const msg = {
+    methods: UploadInterface.GetUploadFile,
+    params: {},
+  }
+  const { data, success } = await client().request<Params, UploadFile | undefined>(msg)
+  if (success) {
+    return data
+  }
+})
+
+export const delUploadFile = createAsyncThunk('upload/delUploadFile', async () => {
+  const msg = {
+    methods: UploadInterface.DelUploadFile,
+    params: {},
+  }
+  const { data, success } = await client().request<Params, boolean>(msg)
+  if (success && data) {
+    return true
+  }
+  return false
+})
 
 interface State {
   filesInfo: ArFileInfo[]
@@ -38,6 +66,20 @@ const uploadSlice = createSlice({
     clearFiles(state) {
       state.filesInfo = []
     },
+  },
+  extraReducers: builder => {
+    builder.addCase(fetchUploadFile.fulfilled, (state, { payload }) => {
+      if (payload !== undefined) {
+        const unit8arr = new Uint8Array(Buffer.from(payload.data, 'hex'))
+        const file = new File([unit8arr], payload.name, { type: payload.type })
+        fileStore.setFile([file])
+        state.filesInfo = [{ title: '', desc: '' }]
+      }
+    })
+    builder.addCase(delUploadFile.fulfilled, (state, { payload }) => {
+      fileStore.setFile([])
+      state.filesInfo = []
+    })
   },
 })
 
