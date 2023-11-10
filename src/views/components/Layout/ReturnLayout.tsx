@@ -6,14 +6,18 @@ import useTrans from '@views/i18n/useTrans'
 import style from './returnLayout.module.scss'
 
 interface WelcomeLayoutProps {
+  onReturn?: () => void
   hideReturn?: boolean
   children: React.ReactNode
 }
 
-const ReturnLayout: React.FC<WelcomeLayoutProps> = ({ hideReturn = false, children }) => {
+const ReturnLayout: React.FC<WelcomeLayoutProps> = ({ onReturn, hideReturn = false, children }) => {
   const { t } = useTrans()
 
-  const onBack = (): void => {
+  const onBack = async (): Promise<void> => {
+    if (onReturn !== undefined) {
+      await onReturn()
+    }
     history.back()
   }
 

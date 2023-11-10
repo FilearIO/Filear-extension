@@ -1,16 +1,18 @@
+import BigNumber from 'bignumber.js'
 import React, { useMemo } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import { Button } from '@arshare/cravis'
-import { FILEAR_BIZTYPE, FILEAR_BIZTYPE_DICT } from '@shared/constants'
+import { FILEAR_BIZTYPE, FILEAR_BIZTYPE_DICT, FILEAR_FEES_ADDRESS, FILEAR_FEES_RATE } from '@shared/constants'
 import { readFile } from '@shared/utils/readFile'
 
 import { ROUTES } from '@views/constants'
 import { ReturnLayout } from '@views/components/Layout'
 import { useArFee, useArTransaction } from '@views/hooks'
 import useTrans from '@views/i18n/useTrans'
-import { filesInfoSelector, fileStore } from '@views/store/upload'
+import { AppDispatch } from '@views/store'
+import { filesInfoSelector, fileStore, delUploadFile } from '@views/store/upload'
 
 import FileInfo from './FileInfo'
 
@@ -19,6 +21,7 @@ import style from './style.module.scss'
 const Preview: React.FC = () => {
   const { t } = useTrans()
   const navigate = useNavigate()
+  const dispatch = useDispatch<AppDispatch>()
   const { loading, createTransaction } = useArTransaction()
   const filesInfo = useSelector(filesInfoSelector)
   const files = fileStore.getFile()
@@ -31,6 +34,13 @@ const Preview: React.FC = () => {
     return size
   }, [filesInfo])
   const { fees } = useArFee(size)
+  const feesInfo = useMemo(() => {
+    const filearFees = new BigNumber(fees).multipliedBy(FILEAR_FEES_RATE).toFormat(12)
+    return {
+      filearFees,
+      totalFess: new BigNumber(fees).plus(filearFees).toFormat(12),
+    }
+  }, [fees])
 
   const confirm = async (): Promise<void> => {
     if (loading) {
@@ -44,7 +54,13 @@ const Preview: React.FC = () => {
         { name: 'Description', value: filesInfo[0].desc },
         { name: `${FILEAR_BIZTYPE}`, value: FILEAR_BIZTYPE_DICT.FILE },
       ]
-      const res = await createTransaction({ data, dataSize: String(files[0].size), tags })
+      const res = await createTransaction({
+        target: FILEAR_FEES_ADDRESS,
+        quantity: feesInfo.filearFees,
+        data,
+        dataSize: String(files[0].size),
+        tags,
+      })
       if (res) {
         setTimeout(() => {
           navigate(`${ROUTES.ROOT}${ROUTES.HOME}`)
@@ -53,8 +69,12 @@ const Preview: React.FC = () => {
     }
   }
 
+  const onReturn = async (): Promise<void> => {
+    await dispatch(delUploadFile())
+  }
+
   return (
-    <ReturnLayout>
+    <ReturnLayout onReturn={onReturn}>
       <div className={style.main}>
         <div className={style.infoContainer}>
           {filesInfo.length === 1 ? (
@@ -69,7 +89,7 @@ const Preview: React.FC = () => {
         </div>
         <div className={style.fees}>
           {t('previewFees')}
-          {fees} AR
+          {feesInfo.totalFess} AR
         </div>
         <Button loading={loading} onClick={confirm} size="medium">
           {t('previewUpload')}

@@ -9,6 +9,7 @@ import { useCheckLock } from '@views/hooks'
 import { AppDispatch } from '@views/store'
 import { fetchNetworkList, fetchCurrentNetwork } from '@views/store/network'
 import { accountSelector } from '@views/store/wallet'
+import { fetchUploadFile, filesInfoSelector } from '@views/store/upload'
 
 interface InitialProps {
   children: React.ReactNode
@@ -18,6 +19,7 @@ const Initial: React.FC<InitialProps> = ({ children }) => {
   const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
   const account = useSelector(accountSelector)
+  const filesInfo = useSelector(filesInfoSelector)
   const { loading, locked } = useCheckLock()
 
   useEffect(() => {
@@ -29,6 +31,21 @@ const Initial: React.FC<InitialProps> = ({ children }) => {
       navigate(ROUTES.UNLOCK)
     }
   }, [account, loading, locked])
+
+  useEffect(() => {
+    async function getUploadFile(): Promise<void> {
+      await dispatch(fetchUploadFile())
+    }
+    if (!loading && !locked) {
+      void getUploadFile()
+    }
+  }, [loading, locked])
+
+  useEffect(() => {
+    if (filesInfo.length > 0) {
+      navigate(`${ROUTES.ROOT}${ROUTES.PREVIEW}`)
+    }
+  }, [filesInfo])
 
   useEffect(() => {
     async function init(): Promise<void> {

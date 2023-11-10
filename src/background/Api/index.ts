@@ -5,6 +5,7 @@ import WalletApi from './WalletApi'
 import HistoryApi from './HistoryApi'
 import NetworkApi from './NetworkApi'
 import TransactionApi from './TransactionApi'
+import UploadApi from './UploadApi'
 
 class ApiHandler {
   private apiProxy: Record<string, any> = {}
@@ -14,6 +15,7 @@ class ApiHandler {
     this.serviceRegister(ApiKey.NetworkApi, new NetworkApi())
     this.serviceRegister(ApiKey.TransactionApi, new TransactionApi())
     this.serviceRegister(ApiKey.Histroy, new HistoryApi())
+    this.serviceRegister(ApiKey.Upload, new UploadApi())
   }
 
   public async handler<T = any>(msg: Message<any>): Promise<any> {

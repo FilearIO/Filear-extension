@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import classNames from 'classnames'
+import React, { useState, Fragment } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { Input } from '@views/cravis'
@@ -37,19 +38,19 @@ const FileInfo: React.FC<FileInfoProps> = ({ file, fileInfo, index }) => {
         {t('previewName')}
         {file.name}
       </div>
-      <div className={style.desc}>
+      <div className={classNames(style.desc, { [style.edit]: editDesc })}>
         {t('previewDesc')}
         {editDesc ? (
-          <div>
+          <div style={{ flex: 1 }}>
             <Input value={desc} onChange={e => setDesc(e.target.value)} onBlur={onBlur} />
           </div>
         ) : (
-          <div className={style.descContent}>
+          <Fragment>
             {fileInfo.desc}
             <span onClick={() => setEditDesc(true)}>
               <EditIcon size={14} color="#B1B5C4" />
             </span>
-          </div>
+          </Fragment>
         )}
       </div>
       <div className={style.size}>

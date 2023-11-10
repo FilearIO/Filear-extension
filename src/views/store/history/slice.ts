@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 import type { PageInfo, TransactionConnection } from '@shared/interface'
-import { HistoryInterface, GetHistoryListParams } from '@shared/interface/api'
+import { HistoryInterface, type GetHistoryListParams } from '@shared/interface/api'
 import client from '@views/client'
 
 export const fetchHistoryList = createAsyncThunk(
